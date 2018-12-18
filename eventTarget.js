@@ -15,3 +15,17 @@ function bgColor(){
 let divs = document.querySelectorAll('div');
 
 divs.forEach(div=> div.onclick=(e)=> e.target.style.backgroundColor = bgColor());
+
+// form validation
+const form = document.querySelector('form');
+const fname = document.getElementById('fname');
+const lname = document.getElementById('lname');
+let para = document.querySelector('p');
+
+// prevent default if form field empty
+form.onsubmit =(e)=>{
+    if (fname.value === '' || lname.value === ''){
+        e.preventDefault();
+        para.textContent = 'Please fill in both names!';
+    }
+};
