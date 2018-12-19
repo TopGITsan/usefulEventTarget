@@ -20,7 +20,7 @@ divs.forEach(div=> div.onclick=(e)=> e.target.style.backgroundColor = bgColor())
 const form = document.querySelector('form');
 const fname = document.getElementById('fname');
 const lname = document.getElementById('lname');
-let para = document.querySelector('p');
+let para = document.querySelector('#warning');
 
 // prevent default if form field empty
 form.onsubmit =(e)=>{
@@ -29,3 +29,18 @@ form.onsubmit =(e)=>{
         para.textContent = 'Please fill in both names!';
     }
 };
+
+
+// video
+
+const btn = document.querySelector('button');
+const videoBox = document.querySelector('header');
+const video = document.querySelector('video');
+
+
+btn.onclick = ()=>{ videoBox.setAttribute('class', 'showing');
+};
+
+btn.onclick = ()=>{ videoBox.setAttribute('class', 'hidden')};
+
+video.onclick = ()=>{ video.play()};
