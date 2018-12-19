@@ -41,6 +41,9 @@ const video = document.querySelector('video');
 btn.onclick = ()=>{ videoBox.setAttribute('class', 'showing');
 };
 
-btn.onclick = ()=>{ videoBox.setAttribute('class', 'hidden')};
+videoBox.onclick = ()=>{ videoBox.setAttribute('class', 'hidden')};
 
-video.onclick = ()=>{ video.play()};
+video.onclick = (e)=>{ 
+    e.stopPropagation();
+    video.play();
+};
